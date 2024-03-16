@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 export const VideoCards = () => {
     const [videos, setVideos] = useState([]);
 
+
     useEffect(() => {
         const fetchAllVideos = async () => {
             try {
@@ -35,9 +36,9 @@ export const VideoCards = () => {
 
     return (
         <Container>
-            <Row>
+            {/* <Row>
                 <Forms addVideo={handleAddVideo} />
-            </Row>
+            </Row> */}
             <Row>
                 {videos.map((video) => (
                     <Videos

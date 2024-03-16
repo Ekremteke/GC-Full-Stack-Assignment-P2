@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./comp.css";
 
-export const Forms = ({ addVideo }) => {
+export const Forms = ({ addVideo, setVideos, videos }) => {
     const [input, setInput] = useState({
         title: "",
         url: "",
@@ -21,9 +21,18 @@ export const Forms = ({ addVideo }) => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(input)
             });
+
+            if (!res.ok) {
+                throw new Error("Failed to add video");
+            }
+
             const data = await res.json();
             addVideo(data);
-            setInput({ ...input, title: "", url: "", rating: 0 });
+
+            // Yeni videoyu state'e ekleyelim
+            setVideos([...videos, data]);
+
+            setInput({ title: "", url: "", rating: 0 });
         } catch (error) {
             console.error("Error adding video:", error);
         }
@@ -54,5 +63,5 @@ export const Forms = ({ addVideo }) => {
                 </div>
             </form>
         </div>
-    )
-}
+    );
+};
