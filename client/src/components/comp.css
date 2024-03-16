@@ -1,6 +1,6 @@
 .coloring:hover{
     cursor: pointer;
-    color: red;
+    color: rgb(239, 239, 239);
 }
 
 .thumbs-icons{
@@ -9,7 +9,7 @@
 }
 
  .main-container{
-    background-color:rgba(255, 0, 0, 0.274);
+    background-color:rgb(234, 234, 234);
     text-align: center;
     margin: 10px;
     height: 375px;
@@ -21,11 +21,11 @@
     
 }
 body{
-    background-color: brown;
+    background-color: rgb(255, 255, 255);
 }
 header{
-    background-color: crimson;
+    background-color: rgba(255, 255, 255, 0.74);
 }
 .form{
-    background-color: rgba(249, 116, 0, 0.781);
+    background-color: rgba(219, 175, 137, 0.781);
 }
