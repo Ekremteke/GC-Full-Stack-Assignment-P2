@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Forms />
+      {/* <Forms /> */}
       <VideoCards />
     </div>
   );

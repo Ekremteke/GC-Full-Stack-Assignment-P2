@@ -36,9 +36,9 @@ export const VideoCards = () => {
 
     return (
         <Container>
-            {/* <Row>
+            <Row>
                 <Forms addVideo={handleAddVideo} />
-            </Row> */}
+            </Row>
             <Row>
                 {videos.map((video) => (
                     <Videos

@@ -29,7 +29,6 @@ export const Forms = ({ addVideo, setVideos, videos }) => {
             const data = await res.json();
             addVideo(data);
 
-            // Yeni videoyu state'e ekleyelim
             setVideos([...videos, data]);
 
             setInput({ title: "", url: "", rating: 0 });
