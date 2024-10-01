@@ -1,50 +1,53 @@
-.coloring:hover {
-  cursor: pointer;
-  color: rgb(239, 239, 239);
+/* Container for the entire component */
+.video-cards-container {
+  padding: 20px;
 }
 
-.thumbs-icons {
-  display: flex;
-  justify-content: space-around;
+/* Grid layout for video cards */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
 }
 
+/* Optionally add responsive adjustments */
+@media (max-width: 768px) {
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Video card styling */
 .main-container {
   background-color: rgb(234, 234, 234);
   text-align: center;
-  margin: 10px;
-  height: 400px;
-  width: 375px;
-  transition: transform 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.cards:hover {
-    transform: scale(1.05);
-  margin: 10px;
-  
+
+.main-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-body {
-  background-color: rgb(255, 255, 255);
-}
-header {
-  background-color: rgba(255, 255, 255, 0.74);
-}
-.form {
-  margin: 10px;
-  background-color: rgba(243, 242, 241, 0.781);
-  text-align: center;
-  height: 220px;
-  width: 770px;
-}
+
+/* Button styling */
 .btn-submit {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease,
+    background-color 0.3s ease;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .btn-submit:hover {
   transform: scale(1.1);
+  background-color: #0056b3;
 }
 
 .btn-submit:active {
@@ -52,6 +55,83 @@ header {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
+/* Header text alignment */
 h1 {
   text-align: left;
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+/* Container for the form */
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title styling */
+.form-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+}
+
+/* General form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Form label styling */
+.form-label {
+  display: block;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Form input styling */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styling */
+.btn-submit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.btn-submit:active {
+  background-color: #004080;
 }

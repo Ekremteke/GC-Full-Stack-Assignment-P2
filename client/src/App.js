@@ -4,10 +4,14 @@ import { Header, Forms, VideoCards } from "./components";
 
 function App() {
   return (
-    <div>
+    <html lang="en">
+      <head>Suggest Stream</head>
+      <Forms />
       <Header />
-      <VideoCards />
-    </div>
+      <body>
+        <VideoCards />
+      </body>
+    </html>
   );
 }
 

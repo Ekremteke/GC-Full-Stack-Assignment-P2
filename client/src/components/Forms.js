@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./comp.css";
+import "./comp.css"; // Make sure to import your updated CSS file
 
-export const Forms = ({ addVideo, setVideos, videos }) => {
+export const Forms = ({ addVideo }) => {
   const [input, setInput] = useState({
     title: "",
     url: "",
@@ -28,7 +28,6 @@ export const Forms = ({ addVideo, setVideos, videos }) => {
 
       const data = await res.json();
       addVideo(data);
-      setVideos([...videos, data]);
       setInput({ title: "", url: "", rating: 0 });
     } catch (error) {
       console.error("Error adding video:", error);
@@ -36,58 +35,59 @@ export const Forms = ({ addVideo, setVideos, videos }) => {
   };
 
   return (
-    <div className="form">
-      <h2>Add Video</h2>
-      <form onSubmit={onSubmit}>
-        <div>
-          <label>
+    <div className="form-container">
+      <h2 className="form-title">Add Video</h2>
+      <form onSubmit={onSubmit} className="form">
+        <div className="form-group">
+          <label htmlFor="title" className="form-label">
             Title
-            <br />
-            <input
-              id="title"
-              type="text"
-              name="title"
-              value={input.title}
-              onChange={handleChange}
-            />
           </label>
+          <input
+            id="title"
+            type="text"
+            name="title"
+            value={input.title}
+            onChange={handleChange}
+            className="form-input"
+            placeholder="Enter video title"
+          />
         </div>
 
-        <div>
-          <label>
+        <div className="form-group">
+          <label htmlFor="url" className="form-label">
             Url
-            <br />
-            <input
-              id="url"
-              type="text"
-              name="url"
-              value={input.url}
-              onChange={handleChange}
-            />
           </label>
+          <input
+            id="url"
+            type="text"
+            name="url"
+            value={input.url}
+            onChange={handleChange}
+            className="form-input"
+            placeholder="Enter video URL"
+          />
         </div>
 
-        <div>
-          <label>
+        <div className="form-group">
+          <label htmlFor="rating" className="form-label">
             Rating
-            <br />
-            <input
-              id="rating"
-              type="number"
-              name="rating"
-              value={input.rating}
-              onChange={handleChange}
-              min="0"
-              max="10"
-            />
           </label>
+          <input
+            id="rating"
+            type="number"
+            name="rating"
+            value={input.rating}
+            onChange={handleChange}
+            className="form-input"
+            min="0"
+            max="10"
+            placeholder="0-10"
+          />
         </div>
 
-        <div>
-          <button className="btn-submit" type="submit">
-            Add
-          </button>
-        </div>
+        <button className="btn-submit" type="submit">
+          Add Video
+        </button>
       </form>
     </div>
   );

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Forms } from "./Forms";
 import { Videos } from "./Videos";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
+import "./comp.css"; // Make sure to import your CSS file
 
 export const VideoCards = () => {
   const [videos, setVideos] = useState([]);
@@ -34,11 +32,8 @@ export const VideoCards = () => {
   };
 
   return (
-    <Container>
-      <Row>
-        <Forms addVideo={handleAddVideo} />
-      </Row>
-      <Row>
+    <div className="video-cards-container">
+      <div className="videos-grid">
         {videos.map((video) => (
           <Videos
             key={video.id}
@@ -49,7 +44,7 @@ export const VideoCards = () => {
             onDelete={handleDeleteVideo}
           />
         ))}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
